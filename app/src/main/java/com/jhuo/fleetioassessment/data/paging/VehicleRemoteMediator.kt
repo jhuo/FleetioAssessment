@@ -29,9 +29,9 @@ class VehicleRemoteMediator(
     ): MediatorResult {
         return try {
             val nextCursor = when (loadType) {
-                LoadType.REFRESH -> null // Fetch first page
+                LoadType.REFRESH -> null
                 LoadType.PREPEND -> return MediatorResult.Success(endOfPaginationReached = true)
-                LoadType.APPEND -> remoteKeysDao.getNextCursor() // Get nextCursor from Room
+                LoadType.APPEND -> remoteKeysDao.getNextCursor()
             }
 
             val vehicleListDto = vehicleApi.getVehicleList(
@@ -49,10 +49,8 @@ class VehicleRemoteMediator(
 
                 vehicleDao.upsertVehicleList(vehicleList)
 
-                // Store nextCursor in Room
                 remoteKeysDao.upsertRemoteKey(RemoteKeys(nextCursor = vehicleListDto.nextCursor))
             }
-
             MediatorResult.Success(endOfPaginationReached = vehicleListDto.nextCursor == null)
         } catch(e: IOException) {
             MediatorResult.Error(e)

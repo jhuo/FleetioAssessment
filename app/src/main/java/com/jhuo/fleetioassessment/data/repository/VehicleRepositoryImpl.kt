@@ -1,6 +1,8 @@
 package com.jhuo.fleetioassessment.data.repository
 
 import android.R.attr.category
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -71,6 +73,7 @@ class VehicleRepositoryImpl @Inject constructor(
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override suspend fun getCommentsListByVehicleId(id: Int, forceFetchFromRemote: Boolean): Flow<Resource<List<Comment>>> {
         return flow {
             emit(Resource.Loading(true))

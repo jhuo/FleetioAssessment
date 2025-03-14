@@ -1,7 +1,11 @@
 package com.jhuo.fleetioassessment.presentation.vehicle_details
 
+import android.R.attr.label
+import android.R.attr.name
+import android.R.attr.text
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,6 +24,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -41,6 +46,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -99,11 +105,11 @@ fun VehicleDetailsScreen(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Image(
                         painter = if (vehicle.imageUrl.isEmpty()) {
-                            painterResource(id = R.drawable.vehicle_place_holder)
+                            painterResource(id = R.drawable.car_place_holder)
                         } else {
                             rememberAsyncImagePainter(vehicle.imageUrl)
                         },
-                        contentDescription = null,
+                        contentDescription = stringResource(R.string.vehicle_image),
                         modifier = Modifier.size(50.dp)
                     )
                     Column(modifier = Modifier.padding(start = 16.dp)) {
@@ -113,7 +119,7 @@ fun VehicleDetailsScreen(
                             vehicle.make,
                             vehicle.model
                         ).joinToString(" ")
-                        Text(text = vehicleDetails, fontSize = 14.sp, color = Color.Gray)
+                        Text(text = vehicleDetails, fontSize = 14.sp)
                     }
                 }
                 Spacer(modifier = Modifier.height(16.dp))
@@ -128,14 +134,13 @@ fun VehicleDetailsScreen(
 
                 Row(
                     Modifier
-                        .clickable { navController.navigate(Screen.CommentList.rout + "/${vehicle.id}") }
+                        .fillMaxWidth().padding(vertical = 16.dp)
+                        .clickable { navController.navigate(Screen.CommentList.rout + "/${vehicle.id}")
+                        },
+                    verticalAlignment = Alignment.CenterVertically
                     ) {
-                    VehicleDetailItem(
-                        label = stringResource(R.string.comments),
-                        value = "${vehicle.commentsCount}"
-                    )
-
-                    Icon(Icons.Default.ArrowForward, contentDescription = stringResource(R.string.forward))
+                        Text(text = stringResource(R.string.comments) + " ${vehicle.commentsCount}", fontSize = 14.sp, modifier = Modifier.weight(1f), color = Color.Gray)
+                        Icon(Icons.Default.ArrowForward, contentDescription = stringResource(R.string.forward))
 
                 }
 

@@ -45,7 +45,7 @@ fun VehicleItem(
             modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             Image(
                 painter = if (vehicle.imageUrl.isEmpty()) {
-                    painterResource(id = R.drawable.vehicle_place_holder)
+                    painterResource(id = R.drawable.car_place_holder)
                 } else {
                     rememberAsyncImagePainter(vehicle.imageUrl)
                 },
