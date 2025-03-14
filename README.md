@@ -11,11 +11,9 @@ It integrates with the Fleetio API to display and manage vehicles, implementing 
 
 Implemented Core Features:
 
-Vehicle List Screen – Displays all vehicles with pagination.
-Vehicle Details Screen – Shows detailed information and allows updates.
-Comment List Screen – Displays user comments (read-only).
-
-Also I completed all of the additional features:
+1. Vehicle List Screen – Displays all vehicles with pagination.
+2. Vehicle Details Screen – Shows detailed information and allows updates.
+3. Comment List Screen – Displays user comments (read-only).
 
 Additional Features Completed:
 
