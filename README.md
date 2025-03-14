@@ -19,7 +19,7 @@ Also I completed all of the additional features:
 
 Additional Features Completed:
 
-Filtering – Users can filter vehicles by name.
-Editable VIN & License Plate – Users can update vehicle details.
-Map View – Displays vehicle’s last known location.
-Comments Section – Shows a list of vehicle-related comments (read-only).
+1. Filtering – Users can filter vehicles by name.
+2. Editable VIN & License Plate – Users can update vehicle details.
+3. Map View – Displays vehicle’s last known location.
+4. Comments Section – Shows a list of vehicle-related comments (read-only).
