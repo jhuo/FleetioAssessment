@@ -21,3 +21,5 @@ Additional Features Completed:
 2. Editable VIN & License Plate – Users can update vehicle details.
 3. Map View – Displays vehicle’s last known location.
 4. Comments Section – Shows a list of vehicle-related comments (read-only).
+
+I started to push and commit on the last day to add comment list feature, but I had been working on the project since last Friday on my local Android studio.
