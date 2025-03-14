@@ -1,4 +1,4 @@
-package com.jhuo.fleetioassessment.presentation.components
+package com.jhuo.fleetioassessment.presentation.vehicle_listings
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

@@ -13,8 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.jhuo.fleetioassessment.presentation.screens.VehicleDetailsScreen
-import com.jhuo.fleetioassessment.presentation.screens.VehicleListScreen
+import com.jhuo.fleetioassessment.presentation.vehicle_details.VehicleDetailsScreen
+import com.jhuo.fleetioassessment.presentation.vehicle_listings.VehicleListScreen
 import com.jhuo.fleetioassessment.ui.theme.FleetioAssessmentTheme
 import com.jhuo.fleetioassessment.util.Screen
 import dagger.hilt.android.AndroidEntryPoint

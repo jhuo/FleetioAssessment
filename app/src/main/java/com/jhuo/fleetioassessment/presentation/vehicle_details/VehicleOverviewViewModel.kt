@@ -1,12 +1,11 @@
-package com.jhuo.fleetioassessment.presentation
+package com.jhuo.fleetioassessment.presentation.vehicle_details
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jhuo.fleetioassessment.domain.repository.VehicleRepository
-import com.jhuo.fleetioassessment.presentation.components.VehicleOverviewEvent
+import com.jhuo.fleetioassessment.presentation.vehicle_listings.VehicleOverviewEvent
 import com.jhuo.fleetioassessment.util.Resource
-import com.jhuo.fleetioassessment.presentation.components.VehicleOverviewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,7 +22,7 @@ class VehicleOverviewViewModel @Inject constructor(
 
     private val vehicleId = savedStateHandle.get<Int>("vehicleId")
 
-    private val _overviewState = MutableStateFlow(VehicleOverviewState())
+    private val _overviewState = MutableStateFlow(VehicleDetailsState())
     val overviewState = _overviewState.asStateFlow()
 
     private val _vinError = MutableStateFlow<String?>(null)

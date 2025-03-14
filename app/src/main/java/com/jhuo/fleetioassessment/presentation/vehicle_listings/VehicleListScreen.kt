@@ -1,4 +1,4 @@
-package com.jhuo.fleetioassessment.presentation.screens
+package com.jhuo.fleetioassessment.presentation.vehicle_listings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -38,8 +38,6 @@ import androidx.navigation.NavHostController
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.jhuo.fleetioassessment.R
-import com.jhuo.fleetioassessment.presentation.VehicleListViewModel
-import com.jhuo.fleetioassessment.presentation.components.VehicleItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -98,7 +96,6 @@ fun FilterByNameBar(
             .padding(horizontal = 8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Search input field
         OutlinedTextField(
             value = nameFilter.value,
             onValueChange = { nameFilter.value = it },

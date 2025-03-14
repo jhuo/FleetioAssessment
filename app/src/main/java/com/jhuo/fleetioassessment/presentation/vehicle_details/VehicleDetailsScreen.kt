@@ -1,4 +1,4 @@
-package com.jhuo.fleetioassessment.presentation.screens
+package com.jhuo.fleetioassessment.presentation.vehicle_details
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -40,7 +39,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -50,8 +48,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import com.jhuo.fleetioassessment.R
-import com.jhuo.fleetioassessment.presentation.VehicleOverviewViewModel
-import com.jhuo.fleetioassessment.presentation.components.VehicleOverviewEvent
+import com.jhuo.fleetioassessment.presentation.vehicle_listings.VehicleOverviewEvent
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -208,7 +205,7 @@ fun VehicleDetailsScreen(
                         },
                         enabled = isButtonEnabled
                     ) {
-                        Text(stringResource(R.string.save)) // Changed from "Save Changes"
+                        Text(stringResource(R.string.save))
                     }
                 }
 
@@ -226,6 +223,7 @@ fun VehicleDetailsScreen(
                         newVin = it
                         detailsViewModel.validateInputs(newVin, newLicensePlate)
                     },
+                    maxLines = 1,
                     label = { Text(stringResource(R.string.vin)) },
                     modifier = Modifier.fillMaxWidth(),
                     isError = vinError != null
@@ -244,10 +242,10 @@ fun VehicleDetailsScreen(
                         newLicensePlate = it
                         detailsViewModel.validateInputs(newVin, newLicensePlate)
                     },
+                    maxLines = 1,
                     label = { Text(stringResource(R.string.license_plate)) },
                     modifier = Modifier.fillMaxWidth()
                 )
-
 
                 Spacer(modifier = Modifier.height(24.dp))
             }

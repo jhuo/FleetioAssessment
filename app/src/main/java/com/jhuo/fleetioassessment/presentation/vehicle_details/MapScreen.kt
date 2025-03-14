@@ -1,4 +1,4 @@
-package com.jhuo.fleetioassessment.presentation.screens
+package com.jhuo.fleetioassessment.presentation.vehicle_details
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height

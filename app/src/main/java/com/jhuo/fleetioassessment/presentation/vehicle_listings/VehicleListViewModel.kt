@@ -1,4 +1,4 @@
-package com.jhuo.fleetioassessment.presentation
+package com.jhuo.fleetioassessment.presentation.vehicle_listings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
