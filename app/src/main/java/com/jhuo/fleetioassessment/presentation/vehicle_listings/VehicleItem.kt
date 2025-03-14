@@ -33,12 +33,11 @@ fun VehicleItem(
     vehicle: Vehicle,
     navHostController: NavHostController
 ) {
-
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .clickable { navHostController.navigate(Screen.VehicleOverview.rout + "/${vehicle.id}") },
+            .clickable { navHostController.navigate(Screen.VehicleDetails.rout + "/${vehicle.id}") },
         elevation = CardDefaults
             .cardElevation(4.dp))
     {

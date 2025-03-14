@@ -1,6 +1,7 @@
 package com.jhuo.fleetioassessment.data.remote
 
 import com.jhuo.fleetioassessment.data.remote.dto.comment.CommentDto
+import com.jhuo.fleetioassessment.data.remote.dto.comment.CommentsListDto
 import com.jhuo.fleetioassessment.data.remote.dto.vehicle.VehicleDto
 import com.jhuo.fleetioassessment.data.remote.dto.vehicle.VehicleListDto
 import com.jhuo.fleetioassessment.util.Constants.ACCOUNT_TOKEN
@@ -44,5 +45,5 @@ interface VehicleApiService {
         @Query("filter[commentable_id][eq]") commentableId: Int,
         @Header("Authorization") authHeader: String = AUTH_HEADER,
         @Header("Account-Token") accountToken: String = ACCOUNT_TOKEN
-    ): List<CommentDto>
+    ): CommentsListDto
 }

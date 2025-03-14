@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.jhuo.fleetioassessment.presentation.comment_listings.CommentListScreen
 import com.jhuo.fleetioassessment.presentation.vehicle_details.VehicleDetailsScreen
 import com.jhuo.fleetioassessment.presentation.vehicle_listings.VehicleListScreen
 import com.jhuo.fleetioassessment.ui.theme.FleetioAssessmentTheme
@@ -42,12 +43,21 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(
-                            Screen.VehicleOverview.rout + "/{vehicleId}",
+                            Screen.VehicleDetails.rout + "/{vehicleId}",
                             arguments = listOf(
                                 navArgument("vehicleId") { type = NavType.IntType }
                             )
                         ) { backStackEntry ->
                             VehicleDetailsScreen(navController)
+                        }
+
+                        composable(
+                            Screen.CommentList.rout + "/{vehicleId}",
+                            arguments = listOf(
+                                navArgument("vehicleId") { type = NavType.IntType }
+                            )
+                        ) { backStackEntry ->
+                            CommentListScreen(navController)
                         }
                     }
                 }

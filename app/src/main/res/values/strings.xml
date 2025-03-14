@@ -9,6 +9,8 @@
     <string name="details">Details</string>
     <string name="mileage">Mileage</string>
     <string name="status">Status</string>
+    <string name="comments">Comments</string>
+    <string name="forward">Read comments</string>
     <string name="most_recent_location">Most recent location</string>
 
     <string name="back">Back</string>
@@ -20,4 +22,6 @@
     <string name="vin">Vin</string>
     <string name="vin_requirement">17 letters and numbers</string>
 
+    <string name="comment_list">Comment List</string>
+    <string name="user_avatar">User Avatar</string>
 </resources>

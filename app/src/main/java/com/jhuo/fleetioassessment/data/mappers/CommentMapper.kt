@@ -1,8 +1,11 @@
 package com.jhuo.fleetioassessment.data.mappers
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.jhuo.fleetioassessment.data.model.local.comment.CommentEntity
 import com.jhuo.fleetioassessment.data.remote.dto.comment.CommentDto
 import com.jhuo.fleetioassessment.domain.model.Comment
+import com.jhuo.fleetioassessment.util.DateTimeUtils
 
 fun CommentDto.toCommentEntity(): CommentEntity {
     val authorName = author.name
@@ -20,14 +23,17 @@ fun CommentDto.toCommentEntity(): CommentEntity {
     )
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun CommentEntity.toComment(): Comment {
+
+
     return Comment(
         id = id,
         authorName = authorName,
         comment = comment,
         commentableId = commentableId,
         commentableType = commentableType,
-        createdAt = createdAt,
+        createdAt = DateTimeUtils.formatDateTime(DateTimeUtils.parseDateTime(createdAt)),
         htmlContent = htmlContent,
         updatedAt = updatedAt,
         userId = userId,

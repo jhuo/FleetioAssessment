@@ -103,7 +103,7 @@ class VehicleRepositoryImpl @Inject constructor(
                 return@flow
             }
 
-            val commentEntities = commentsListFromApi.let {
+            val commentEntities = commentsListFromApi.commentsList.let {
                 it.map { commentDto ->
                     commentDto.toCommentEntity()
                 }

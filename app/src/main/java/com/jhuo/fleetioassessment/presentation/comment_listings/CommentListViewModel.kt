@@ -46,10 +46,10 @@ class CommentListViewModel @Inject constructor(
                     }
 
                     is Resource.Success -> {
-                        result.data?.let { popularList ->
+                        result.data?.let { commentList ->
                             _commentListState.update {
                                 it.copy(
-                                    commentsList = commentListState.value.commentsList
+                                    commentsList = commentList
                                 )
                             }
                         }

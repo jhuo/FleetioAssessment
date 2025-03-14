@@ -1,7 +1,6 @@
 package com.jhuo.fleetioassessment.data.remote.dto.comment
 
 import com.google.gson.annotations.SerializedName
-import org.w3c.dom.Comment
 
 data class CommentsListDto(
     val estimated_remaining_count: Int,

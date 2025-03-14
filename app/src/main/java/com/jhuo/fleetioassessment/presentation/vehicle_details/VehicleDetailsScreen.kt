@@ -1,6 +1,7 @@
 package com.jhuo.fleetioassessment.presentation.vehicle_details
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -49,6 +51,7 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import com.jhuo.fleetioassessment.R
 import com.jhuo.fleetioassessment.presentation.vehicle_listings.VehicleOverviewEvent
+import com.jhuo.fleetioassessment.util.Screen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -122,6 +125,19 @@ fun VehicleDetailsScreen(
                     label = stringResource(R.string.status),
                     value = vehicle.status,
                 )
+
+                Row(
+                    Modifier
+                        .clickable { navController.navigate(Screen.CommentList.rout + "/${vehicle.id}") }
+                    ) {
+                    VehicleDetailItem(
+                        label = stringResource(R.string.comments),
+                        value = "${vehicle.commentsCount}"
+                    )
+
+                    Icon(Icons.Default.ArrowForward, contentDescription = stringResource(R.string.forward))
+
+                }
 
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
