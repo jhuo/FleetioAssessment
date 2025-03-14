@@ -13,7 +13,7 @@ interface CommentDao {
     suspend fun upsertComment(comment: CommentEntity)
 
     @Query("SELECT * FROM COMMENT_LIST_TABLE WHERE id = :id")
-    suspend fun getCommentById(id: Int): CommentEntity
+    suspend fun getCommentByVehicleId(id: Int): List<CommentEntity>
 
     @Query("DELETE FROM COMMENT_LIST_TABLE")
     suspend fun clearAllComments()

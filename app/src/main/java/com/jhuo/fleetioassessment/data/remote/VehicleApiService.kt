@@ -44,5 +44,5 @@ interface VehicleApiService {
         @Query("filter[commentable_id][eq]") commentableId: Int,
         @Header("Authorization") authHeader: String = AUTH_HEADER,
         @Header("Account-Token") accountToken: String = ACCOUNT_TOKEN
-    ): Response<List<CommentDto>>
+    ): List<CommentDto>
 }
