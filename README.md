@@ -1,13 +1,13 @@
 This project is built using Kotlin and Jetpack Compose with MVVM architecture. 
 It integrates with the Fleetio API to display and manage vehicles, implementing features like pagination, filtering, updates, and location tracking.
 
-Retrofit & OkHttp – Handles API communication with Fleetio (GET & PATCH).
-Hilt – Provides Dependency Injection for better modularity.
-Coil – Efficient image loading and caching.
-Paging 3 – Enables smooth infinite scrolling for large datasets.
-Room – Stores offline data for a seamless user experience.
-Google Maps API – Displays vehicle locations on a map.
-Gson – Converts JSON responses into Kotlin data classes.
+1. Retrofit & OkHttp – Handles API communication with Fleetio (GET & PATCH).
+2. Hilt – Provides Dependency Injection for better modularity.
+3. Coil – Efficient image loading and caching.
+4. Paging 3 – Enables smooth infinite scrolling for large datasets.
+5. Room – Stores offline data for a seamless user experience.
+6. Google Maps API – Displays vehicle locations on a map.
+7. Gson – Converts JSON responses into Kotlin data classes.
 
 Implemented Core Features:
 
