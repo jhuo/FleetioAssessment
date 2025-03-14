@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Fleetio Assessment</string>
+
+    <string name="vehicle_list">Vehicle List</string>
+    <string name="filter_by_name">Filter by name</string>
+    <string name="filter">Filter</string>
+    <string name="clear">Clear</string>
+
+    <string name="details">Details</string>
+    <string name="mileage">Mileage</string>
+    <string name="status">Status</string>
+    <string name="most_recent_location">Most recent location</string>
+
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="update_details">Update Details</string>
+    <string name="license_plate">License Plate</string>
+    <string name="letter_numbers_only">Letters and numbers only</string>
+    <string name="vin">Vin</string>
+    <string name="vin_requirement">17 letters and numbers</string>
+
+</resources>
